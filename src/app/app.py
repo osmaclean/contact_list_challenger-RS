@@ -1,5 +1,6 @@
 from add_contact import addContact
 from view_contact import viewContacts
+from edit_contact import editContact
 
 contacts = []
 while True:
@@ -25,6 +26,24 @@ while True:
             print("\n---------------------------")
             print("\nView all contacts")
             viewContacts(contacts)
+            print("\n---------------------------")
+        case 3:
+            print("\n---------------------------")
+            viewContacts(contacts)
+            i_contact = input("Write a contact number you want to edit: ")
+            new_name_contact = input("Write a new contact name: ")
+            new_phone_number_contact = input(
+                "Write a contact number you want to edit: "
+            )
+            new_address_contact = input("Write a contact number you want to edit: ")
+            editContact(
+                contacts,
+                i_contact,
+                new_name_contact,
+                new_phone_number_contact,
+                new_address_contact,
+            )
+            print("\nEdit your contact")
             print("\n---------------------------")
         case 6:
             break
