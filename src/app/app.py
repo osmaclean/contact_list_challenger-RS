@@ -1,6 +1,8 @@
 from add_contact import addContact
 from view_contact import viewContacts
 from edit_contact import editContact
+from favorite_contact import favoriteContact
+from unfavorite_contact import unfavoriteContact
 
 contacts = []
 while True:
@@ -9,8 +11,9 @@ while True:
     print("2 → View all contacts")
     print("3 → Edit your contact")
     print("4 → Favorite your contact")
-    print("5 → Remove your contact")
-    print("6 → Exit the program")
+    print("5 → Unfavorite your contact")
+    print("6 → Remove your contact")
+    print("7 → Exit the program")
 
     escolha = int(input("\nWrite a wish option: "))
 
@@ -45,5 +48,19 @@ while True:
             )
             print("\nEdit your contact")
             print("\n---------------------------")
-        case 6:
+        case 4:
+            print("\n---------------------------")
+            viewContacts(contacts)
+            i_contact = input("Write a contact number you want to favorite: ")
+            favoriteContact(contacts, i_contact)
+            viewContacts(contacts)
+            print("\n---------------------------")
+        case 5:
+            print("\n---------------------------")
+            viewContacts(contacts)
+            i_contact = input("Write a contact number you want to unfavorite: ")
+            unfavoriteContact(contacts, i_contact)
+            viewContacts(contacts)
+            print("\n---------------------------")
+        case 7:
             break
